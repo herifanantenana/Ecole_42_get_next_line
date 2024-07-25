@@ -6,7 +6,7 @@
 /*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 22:23:47 by arakotom          #+#    #+#             */
-/*   Updated: 2024/07/23 22:41:39 by arakotom         ###   ########.fr       */
+/*   Updated: 2024/07/26 01:07:02 by arakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@
 #  define MAX_FD 1024
 # endif
 
-size_t	ft_strlen(const char *s);
-char	*ft_strchr(const char *s, int c);
-char	*ft_strjoin_gnl(char *s1, char *s2);
+size_t	gnl_strlen(const char *s);
+char	*gnl_strchr(const char *s, int c);
+char	*gnl_strjoin(char *s1, char *s2);
 char	*get_next_line(int fd);
 
 #endif

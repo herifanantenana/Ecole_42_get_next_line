@@ -2,9 +2,12 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
+/*                                                    +:+ +:+
+	+:+     */
+/*   By: arakotom <arakotom@student.42antananari    +#+  +:+
+	+#+        */
+/*                                                +#+#+#+#+#+
+	+#+           */
 /*   Created: 2024/03/15 10:53:57 by arakotom          #+#    #+#             */
 /*   Updated: 2024/07/23 16:09:29 by arakotom         ###   ########.fr       */
 /*                                                                            */
@@ -20,9 +23,9 @@
 #  define BUFFER_SIZE 5
 # endif
 
-size_t	ft_strlen(const char *s);
-char	*ft_strchr(const char *s, int c);
-char	*ft_strjoin_gnl(char *s1, char *s2);
+size_t	gnl_strlen(const char *s);
+char	*gnl_strchr(const char *s, int c);
+char	*gnl_strjoin(char *s1, char *s2);
 char	*get_next_line(int fd);
 
 #endif

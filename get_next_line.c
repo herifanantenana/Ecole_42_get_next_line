@@ -6,7 +6,7 @@
 /*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 10:53:30 by arakotom          #+#    #+#             */
-/*   Updated: 2024/07/23 22:42:58 by arakotom         ###   ########.fr       */
+/*   Updated: 2024/07/26 01:07:02 by arakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static char	*get_new_all_line(char *all_line)
 		return (NULL);
 	}
 	br_index = get_br_index(all_line);
-	all_line_len = ft_strlen(all_line);
+	all_line_len = gnl_strlen(all_line);
 	new_line = (char *)malloc((all_line_len - br_index + 1) * sizeof(char));
 	if (!new_line)
 		return (NULL);
@@ -94,7 +94,7 @@ char	*get_next_line(int fd)
 	if (!buff)
 		return (NULL);
 	byte_read = 1;
-	while (!ft_strchr(all_line, '\n') && byte_read != 0)
+	while (!gnl_strchr(all_line, '\n') && byte_read != 0)
 	{
 		byte_read = read(fd, buff, BUFFER_SIZE);
 		if (byte_read == -1)
@@ -102,7 +102,7 @@ char	*get_next_line(int fd)
 		if (byte_read == 0)
 			break ;
 		*(buff + byte_read) = '\0';
-		all_line = ft_strjoin_gnl(all_line, buff);
+		all_line = gnl_strjoin(all_line, buff);
 	}
 	free(buff);
 	buff = get_line(all_line);
