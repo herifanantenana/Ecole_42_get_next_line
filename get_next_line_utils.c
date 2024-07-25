@@ -2,23 +2,19 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+        
-	+:+     */
-/*   By: arakotom <arakotom@student.42antananari    +#+  +:+      
-	+#+        */
-/*                                                +#+#+#+#+#+  
-	+#+           */
+/*                                                    +:+ +:+         +:+     */
+/*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 10:59:13 by arakotom          #+#    #+#             */
-/*   Updated: 2024/07/23 16:16:55 by arakotom         ###   ########.fr       */
+/*   Updated: 2024/07/26 01:09:50 by arakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-
 size_t	gnl_strlen(const char *s)
 {
-	size_t count;
+	size_t	count;
 
 	count = 0;
 	if (!s)
@@ -30,7 +26,7 @@ size_t	gnl_strlen(const char *s)
 
 char	*gnl_strchr(const char *s, int c)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	if (!s)
 		return (NULL);
@@ -48,9 +44,9 @@ char	*gnl_strchr(const char *s, int c)
 
 char	*gnl_strjoin(char *s1, char *s2)
 {
-	char *res;
-	unsigned int i;
-	unsigned int j;
+	char			*res;
+	unsigned int	i;
+	unsigned int	j;
 
 	if (!s1 && !s2)
 		return (NULL);
