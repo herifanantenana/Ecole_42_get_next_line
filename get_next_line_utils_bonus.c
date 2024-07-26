@@ -6,7 +6,7 @@
 /*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 22:30:59 by arakotom          #+#    #+#             */
-/*   Updated: 2024/07/26 01:07:02 by arakotom         ###   ########.fr       */
+/*   Updated: 2024/07/26 20:24:22 by arakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,26 +42,44 @@ char	*gnl_strchr(const char *s, int c)
 	return (NULL);
 }
 
+char	*gnl_strdup(const char *s)
+{
+	char			*dup;
+	unsigned int	i;
+
+	dup = (char *)malloc((gnl_strlen(s) + 1) * sizeof(char));
+	i = 0;
+	if (!dup)
+		return (NULL);
+	while (s[i])
+	{
+		dup[i] = s[i];
+		i++;
+	}
+	dup[i] = '\0';
+	return (dup);
+}
+
 char	*gnl_strjoin(char *s1, char *s2)
 {
 	char			*res;
 	unsigned int	i;
 	unsigned int	j;
 
-	if (!s1 && !s2)
-		return (NULL);
+	if (!s1)
+		return (gnl_strdup(s2));
+	else if (!s2)
+		return (gnl_strdup(s1));
 	res = (char *)malloc((gnl_strlen(s1) + gnl_strlen(s2) + 1) * sizeof(char));
 	if (!res)
 		return (NULL);
 	i = 0;
 	j = 0;
-	if (s1)
-		while (s1[j])
-			res[i++] = s1[j++];
+	while (s1[j])
+		res[i++] = s1[j++];
 	j = 0;
-	if (s2)
-		while (s2[j])
-			res[i++] = s2[j++];
+	while (s2[j])
+		res[i++] = s2[j++];
 	res[i] = '\0';
 	free(s1);
 	return (res);

@@ -6,7 +6,7 @@
 /*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 10:53:57 by arakotom          #+#    #+#             */
-/*   Updated: 2024/07/26 01:10:27 by arakotom         ###   ########.fr       */
+/*   Updated: 2024/07/26 19:42:05 by arakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 
 size_t	gnl_strlen(const char *s);
 char	*gnl_strchr(const char *s, int c);
+char	*gnl_strdup(const char *s);
 char	*gnl_strjoin(char *s1, char *s2);
 char	*get_next_line(int fd);
 

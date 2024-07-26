@@ -6,7 +6,7 @@
 /*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 22:23:47 by arakotom          #+#    #+#             */
-/*   Updated: 2024/07/26 01:07:02 by arakotom         ###   ########.fr       */
+/*   Updated: 2024/07/26 20:30:16 by arakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@
 # endif
 
 # ifndef MAX_FD
-#  define MAX_FD 1024
+#  define MAX_FD 1000000
 # endif
 
 size_t	gnl_strlen(const char *s);
 char	*gnl_strchr(const char *s, int c);
+char	*gnl_strdup(const char *s);
 char	*gnl_strjoin(char *s1, char *s2);
 char	*get_next_line(int fd);
 
