@@ -6,15 +6,15 @@
 /*   By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 10:53:30 by arakotom          #+#    #+#             */
-/*   Updated: 2024/07/26 20:15:05 by arakotom         ###   ########.fr       */
+/*   Updated: 2024/07/26 20:47:34 by arakotom         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	get_br_index(char *str)
+size_t	get_br_index(char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i] && str[i] != '\n')
@@ -34,8 +34,8 @@ static char	*free_all(char *buff, char *all_line)
 static char	*get_line(char *all_line)
 {
 	char	*line;
-	int		line_len;
-	int		i;
+	size_t	line_len;
+	size_t	i;
 
 	if (!all_line || *all_line == '\0')
 		return (NULL);
@@ -58,9 +58,9 @@ static char	*get_line(char *all_line)
 static char	*get_line_left(char *all_line)
 {
 	char	*new_all_line;
-	int		all_line_len;
-	int		br_index;
-	int		i;
+	size_t	all_line_len;
+	size_t	br_index;
+	size_t	i;
 
 	if (!all_line)
 		return (NULL);
