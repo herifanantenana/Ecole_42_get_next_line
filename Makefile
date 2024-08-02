@@ -1,24 +1,29 @@
-#**************************************************************************** #
-# #
-# :: : :: :: :: ::#
-#Makefile : + : : + : : + : #
-#+ : + + : + + : + #
-#By : arakotom < arakotom @student .42antananari + # + + : ++# + #
-#+ #+ #+ #+ #+ #+ + #+ #
-#Created : 2024 / 03 / 15 22 : 30 : 59 by arakotom # + # # + # #
-#Updated : 2024 / 07 / 23 22 : 54 : 39 by arakotom## # ########.fr #
-# #
-#**************************************************************************** #
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: arakotom <arakotom@student.42antananari    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/03/15 22:30:59 by arakotom          #+#    #+#              #
+#    Updated: 2024/08/03 00:25:32 by arakotom         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 CFLAGS = -Wall -Wextra -Werror
 
 OBJ_DIR = objs
 
-BONUS_SRCS = $(wildcard *bonus.c)
-SRCS = $(filter-out $(BONUS_SRCS), $(wildcard *.c))
 
-OBJS = $(patsubst %.c,$(OBJ_DIR)/%.o,$(SRCS))
-BONUS_OBJS = $(patsubst %bonus.c,$(OBJ_DIR)/%bonus.o,$(BONUS_SRCS))
+
+SRCS = get_next_line.c \
+	get_next_line_utils.c
+
+BONUS_SRCS = get_next_line_bonus.c \
+	get_next_line_utils_bonus.c
+
+OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
+BONUS_OBJS = $(addprefix $(OBJ_DIR)/, $(BONUS_SRCS:.c=.o))
 
 RM = rm -rf
 
@@ -33,8 +38,8 @@ $(OBJ_DIR)/%.o : %.c
 	@mkdir -p $(dir $@)
 	cc $(CFLAGS) $ -c $< -o $@
 
-bonus: $(OBJS) $(BONUS_OBJS)
-	ar -rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+bonus: $(BONUS_OBJS)
+	ar -rcs $(NAME) $(BONUS_OBJS)
 
 clean :
 	$(RM) $(OBJ_DIR)
